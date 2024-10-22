@@ -1,0 +1,672 @@
+{
+	"info": {
+		"_postman_id": "3d73b0dd-261f-4085-bf56-b92e2a9f7564",
+		"name": "Task_7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34200621"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "show profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzE2Mzc2NjI1YmE3YzEzODgyMTEyYjciLCJpYXQiOjE3Mjk1MTM2NjAsImV4cCI6MTcyOTUxNzI2MH0.YNXYx1pGiIjxx8ajXUwMDDnPVkxG-gLgHQAxdhXzNFQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/users/67177bad71dfc5b75f618fd4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"67177bad71dfc5b75f618fd4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"mohammad arok\",\r\n    \"email\":\"mohamadArok@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/users/67177bad71dfc5b75f618fd4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"67177bad71dfc5b75f618fd4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "all courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/course/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all videos in course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/course/:course_id/videos",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"course",
+								":course_id",
+								"videos"
+							],
+							"variable": [
+								{
+									"key": "course_id",
+									"value": "6717b36aca279c163d5b7b6b",
+									"description": "6717b36aca279c163d5b7b6b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"React\",\r\n    \"description\":\"React course\",\r\n    \"time\":\"44h\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/course",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"course updated\",\r\n    \"description\":\"description updated\",\r\n    \"time\":\"22H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/course/:course_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"course",
+								":course_id"
+							],
+							"variable": [
+								{
+									"key": "course_id",
+									"value": "6717a20957b340f536439f3f",
+									"description": "6717a20957b340f536439f3f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/course/:course_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"course",
+								":course_id"
+							],
+							"variable": [
+								{
+									"key": "course_id",
+									"value": "6717b36aca279c163d5b7b6b",
+									"description": "6717b36aca279c163d5b7b6b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "get all comments in video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/video/:video_id/comments",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"video",
+								":video_id",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "video_id",
+									"value": "6717b399ca279c163d5b7b6f",
+									"description": "6717b399ca279c163d5b7b6f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add video to course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"section_01\",\r\n    \"description\":\"the first section\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/video/6717b36aca279c163d5b7b6b",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"video",
+								"6717b36aca279c163d5b7b6b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"name updated\",\r\n    \"description\":\"description updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/video/:video_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"video",
+								":video_id"
+							],
+							"variable": [
+								{
+									"key": "video_id",
+									"value": "6717b12bf997b1054eb5c198",
+									"description": "6717b12bf997b1054eb5c198"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/video/:video_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"video",
+								":video_id"
+							],
+							"variable": [
+								{
+									"key": "video_id",
+									"value": "6717b140f997b1054eb5c19c",
+									"description": "6717b140f997b1054eb5c19c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "add comment in video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"first comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/comment/:video_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								":video_id"
+							],
+							"variable": [
+								{
+									"key": "video_id",
+									"value": "6717b399ca279c163d5b7b6f",
+									"description": "6717b399ca279c163d5b7b6f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"comment updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/comment/:comment_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								":comment_id"
+							],
+							"variable": [
+								{
+									"key": "comment_id",
+									"value": "6717b63ab36bf0cbd7d47242",
+									"description": "6717b63ab36bf0cbd7d47242"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Tocken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/comment/:comment_id",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								":comment_id"
+							],
+							"variable": [
+								{
+									"key": "comment_id",
+									"value": "6717b597b36bf0cbd7d4723f",
+									"description": "6717b597b36bf0cbd7d4723f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"Mohammad@gmail.com\",\r\n    \"password\":\"12345\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api/login",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"mohammad\",\r\n    \"email\":\"Mohammad@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api/register",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Tocken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
